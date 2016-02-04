@@ -14,6 +14,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,14 +25,114 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * The main activity for a small Twitter app to capture, <br>notes and comments.
+ * <p>It saves the input tweets in the form of json files.</p><br>
+ *     A sample code is as:<br>
+ *         <code>
+ *             for (int i = 0; i < 10; i++){
+ *                 for (j = 0; j < i; j++){
+ *                     doSomething();
+ *                 }
+ *             }
+ *         </code> <br>
+ * The list of important activities in this calss are as follows:<br>
+ *     <ul>
+ *         <li>item 1</li>
+ *         <li>item 2</li>
+ *         <li>item 3</li>
+ *         <li>item 4</li>
+ *     </ul>
+ * @see NormalTweet
+ * @see java.awt
+ * @author Ali
+ * @version 2.1
+ * @deprecated
+ */
 public class LonelyTwitterActivity extends Activity {
 
+	/**
+	 * @see Tweet
+	 */
+	static int MAXIMUM_TWEET_SIZE = 100;
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
 
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
+
+	private int calculateTweetSize(){
+		//
+		return -1;
+	}
+
+	public String removeStopWords(String text){
+		//Do something ...
+		return "";
+	}
+
+	/**
+	 * Applies some functions on the input values.
+	 * @param text1 The text for the directory name.
+	 * @param text2 The file name.
+	 * @param text3 The extension.
+	 * @param text4
+	 * @return concatenation of ...
+	 * @exception IllegalAccessError
+	 * This happens if ...
+	 * @exception java.util.InvalidPropertiesFormatException
+	 * This happens if ...
+	 * @deprecated
+	 */
+	public String doSomething(String text1, String text2, String text3, String text4){
+		//Do something ...
+		return "";
+	}
+
+	private void startSecondActivity(Intent intent){
+		//Run the second activity
+	}
+
+	protected boolean evaluateOtherActivity(Intent intent){
+		//Do something ...
+		/*
+		ldkfjsld
+		sdfsdf
+		sfsd
+		 */
+		String expression1 = "",
+				expression2 = "",
+				expression3 = "",
+				expression4 = "";
+		int count = 10;
+		String expression = doSomething(expression1, expression2,
+				doSomething(expression3, expression4, expression3,
+						expression4), expression1);
+
+		for (int i = 0; i < count; i++){
+			try{
+				int j = 1;
+				int k = 2;
+				int count2 = 0;
+				if (i < j) {
+					doSomething("", "", "", "");
+				}
+				else if (true) {
+					doSomething("a", "", "", "");
+				}
+			}
+			catch(Exception e){}
+		}
+
+
+
+
+
+		return true;
+	}
+
+
 
 	/** Called when the activity is first created. */
 	@Override
