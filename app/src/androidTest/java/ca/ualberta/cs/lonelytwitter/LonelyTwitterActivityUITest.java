@@ -35,24 +35,21 @@ public class LonelyTwitterActivityUITest extends ActivityInstrumentationTestCase
         ((Button) activity.findViewById(ca.ualberta.cs.lonelytwitter.R.id.save)).performClick();
     }
 
-    //
-    //
+    //-------------------------------------------------------------------------------
     @UiThreadTest
     public void testMakeTweet(){
-        LonelyTwitterActivity lta = (LonelyTwitterActivity) getActivity();
+        LonelyTwitterActivity lta= (LonelyTwitterActivity) getActivity();
+
         int oldLength = lta.getAdapter().getCount();
+        makeTweet("test tweet");
+        ArrayAdapter<Tweet> aa = lta.getAdapter();
+        assertEquals(oldLength + 1, aa.getCount());
 
-        makeTweet("test string");
-        ArrayAdapter<Tweet> arrayAdapter = lta.getAdapter();
-        assertEquals(oldLength + 1, arrayAdapter.getCount());
+        assertTrue("Did you add Tweet?", aa.getItem(aa.getCount()-1) instanceof Tweet);
 
-        assertTrue("Did you add a Tweet object?",
-                arrayAdapter.getItem(arrayAdapter.getCount()-1) instanceof Tweet);
+        Tweet tweet = aa.getItem(aa.getCount()-1);
+        assertEquals("This is not the text we expected!", tweet.getMessage(), "test tweet");
 
-        Tweet tweet = arrayAdapter.getItem(arrayAdapter.getCount()-1);
-        assertEquals("This is not the text we expected!", tweet.getMessage(),
-                "test string");
     }
-    //
-    //
+//-------------------------------------------------------------------------------
 }
